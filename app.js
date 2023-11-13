@@ -52,7 +52,9 @@ closeMenuBtn.addEventListener("click", closeMenu);
         .outerRadius(radius);
 
     // Enhanced color scale
-    const color = d3.scaleOrdinal(d3.schemeSet3);
+    const myColors = ['#6374e3', '#24398a', '#7775AF', '#8EE6FF'];
+
+    const color = d3.scaleOrdinal(myColors);
 
     // Append arcs (pie slices)
     const arcs = svg.selectAll('path')
