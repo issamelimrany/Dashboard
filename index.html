@@ -4,20 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Statistic Dashboard</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Website Users</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+    .box-title {
+      margin-bottom: 5px;
+      font-size: 18px;}
+      .box-footer {
+      padding: 5px;
+      font-size: 14px;
+    }
+  </style>
 
   </head>
   <body>
     <!-- nav bar -->
     <nav class="nav-bar">
       <div class="menu-opener">
-        <img src="img/menu.svg" alt="menu" />
+        <img src="./img/menu.svg" alt="menu" />
       </div>
       <div class="nav-content">
-        <img src="img/info-24px.svg" alt="i" />
-        <img src="img/notifications-24px.svg" alt="notification" />
-        <img class="main-nav-icon" src="img/icon.jpg" alt="main" />
+        <img src="./img/info-24px.svg" alt="i" />
+        <img src="./img/notifications-24px.svg" alt="notification" />
+        <img class="main-nav-icon" src="./img/icon.jpg" alt="main" />
       </div>
     </nav>
 
@@ -26,7 +37,7 @@
       <div class="menu-header">
         <h1>Menu</h1>
         <button class="close-menu">
-          <img src="img/close.svg" alt="close-menu" />
+          <img src="./img/close.svg" alt="close-menu" />
         </button>
       </div>
       <div class="menu-links">
@@ -50,19 +61,15 @@
     <div class="main-layout">
       <main class="main">
         <!-- Row 1 -->
-        <div class="row-1">
-          <div class="box active-users">
-            <h2 class="box-title">
-              Active Users
-            </h2>
-            <h1 class="number-fs">72</h1>
-            <div class="box-footer">
-              <a href="#referrals"
-                >View Referrals
-                <img src="img/arrow-right.svg" alt="arrow" />
-              </a>
-            </div>
-          </div>
+  <div class="row-1">
+    <div class="box active-users">
+      <h2 class="box-title">
+        Website Users
+      </h2>
+      <canvas id="userGraph"></canvas>
+      
+    </div>
+  
           <div class="box page-views">
             <h2 class="box-title">Page views per minute</h2>
             <div class="graph">
@@ -91,7 +98,7 @@
             <div class="box-footer">
               <a href="#referrals"
                 >View Referrals
-                <img src="img/arrow-right.svg" alt="arrow" />
+                <img src="./img/arrow-right.svg" alt="arrow" />
               </a>
             </div>
           </div>
@@ -103,7 +110,7 @@
             <div class="stat-title">
               <span>Users</span>
               <span class="stat-percentage green">
-                <img src="img/arrow-up-green.svg" alt="" />268%
+                <img src="./img/arrow-up-green.svg" alt="" />268%
               </span>
             </div>
             <h1 class="number-fs">
@@ -114,7 +121,7 @@
             <div class="stat-title">
               Sessions
               <span class="stat-percentage green">
-                <img src="img/arrow-up-green.svg" alt="" />268%
+                <img src="./img/arrow-up-green.svg" alt="" />268%
               </span>
             </div>
             <h1 class="number-fs">
@@ -125,7 +132,7 @@
             <div class="stat-title">
               Bounce Rate
               <span class="stat-percentage red">
-                <img src="img/arrow-up-red.svg" alt="" />19%
+                <img src="./img/arrow-up-red.svg" alt="" />19%
               </span>
             </div>
             <h1 class="number-fs">
@@ -136,7 +143,7 @@
             <div class="stat-title">
               Session Duration
               <span class="stat-percentage red">
-                <img src="img/arrow-down-red.svg" alt="" />29.7%
+                <img src="./img/arrow-down-red.svg" alt="" />29.7%
               </span>
             </div>
             <h1 class="number-fs">
@@ -144,6 +151,7 @@
             </h1>
           </div>
         </div>
+
 
         <!-- Row 4 - Devices -->
         <div class="row-4">
@@ -179,15 +187,30 @@
             </div>
           </div>
           <div class="box device-box">
-
-            <div class="box-title">Pie chart</div>
-            <br>
-            <div id="pieChartContainer" style="width: 100%; height: 300px;"></div>
+            <div class="box-title">References</div>
+            <div class="reference-details">
+              <div class="reference">
+                <span>Direct</span>
+                <span>24</span>
+              </div>
+              <div class="reference">
+                <span>Search</span>
+                <span>18</span>
+              </div>
+              <div class="reference">
+                <span>Github</span>
+                <span>12</span>
+              </div>
+              <div class="reference">
+                <span>Discord</span>
+                <span>8</span>
+              </div>
+              <div class="reference">
+                <span>Other</span>
+                <span>2</span>
+              </div>
+            </div>
           </div>
-
-
-
-
         </div>
       </main>
       <aside class="side-bar">
@@ -227,7 +250,7 @@
           <div class="more-stats-box">
             <div class="more-stats-header">
               More Stats
-              <img src="img/more-stats.svg" alt="more" />
+              <img src="./img/more-stats.svg" alt="more" />
             </div>
             <div class="more-stats-body">
               <div class="more-stats">
@@ -244,6 +267,6 @@
       </aside>
     </div>
 
-    <script src="app.js"></script>
+    <script src="./app.js"></script> 
   </body>
 </html>
