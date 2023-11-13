@@ -7,20 +7,52 @@ const closeMenuBtn = document.querySelector(".close-menu");
 
 const openMenu = () => {
     mainLayout.classList.add("active");
-    document.body.style.overflow = "hidden"
+    document.body.style.overflow = "hidden";
     menu.style.left = "0";
-}
+};
 
 const closeMenu = () => {
     mainLayout.classList.remove("active");
-    document.body.style.overflow = "auto"
+    document.body.style.overflow = "auto";
     menu.style.left = "-300px";
-}
+};
 
 openMenuBtn.addEventListener("click", openMenu);
-
 closeMenuBtn.addEventListener("click", closeMenu);
 
+// Graph
+const userData = {
+  labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+  datasets: [{
+    label: 'Website Users',
+    data: [100, 200, 150, 300, 250, 400],
+    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+    borderColor: 'rgba(75, 192, 192, 1)',
+    borderWidth: 1
+  }]
+};
+
+const userGraph = document.getElementById('userGraph').getContext('2d');
+new Chart(userGraph, {
+  type: 'line',
+  data: userData,
+  options: {
+    responsive: true,
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    },
+    layout: {
+      padding: {
+        left: 30,
+        right: 30,
+        top: -5     ,
+        bottom: 30,
+      }
+    }
+  }
+});
 
 
 
