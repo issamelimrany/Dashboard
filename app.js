@@ -88,3 +88,43 @@ closeMenuBtn.addEventListener("click", closeMenu);
     // Optional: Add tooltips (requires additional CSS for styling)
     arcs.append('title')
         .text(function(d) { return `${d.data.label}: ${d.data.value}`; });
+
+
+// Graph
+const userData = {
+  labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+  datasets: [{
+    label: 'Website Users',
+    data:      [ Math.floor(Math.random() * 500),
+      Math.floor(Math.random() * 500),
+      Math.floor(Math.random() * 500),
+      Math.floor(Math.random() * 500),
+      Math.floor(Math.random() * 500),
+      Math.floor(Math.random() * 500)],
+    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+    borderColor: 'rgba(75, 192, 192, 1)',
+    borderWidth: 1
+  }]
+};
+
+const userGraph = document.getElementById('userGraph').getContext('2d');
+new Chart(userGraph, {
+  type: 'line',
+  data: userData,
+  options: {
+    responsive: true,
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    },
+    layout: {
+      padding: {
+        left: 30,
+        right: 30,
+        top: -5     ,
+        bottom: 30,
+      }
+    }
+  }
+});
