@@ -21,17 +21,13 @@ openMenuBtn.addEventListener("click", openMenu);
 
 closeMenuBtn.addEventListener("click", closeMenu);
 
-
-
-
-
     // Sample data for the pie chart
     const data = [
-        { label: 'First', value: 24 },
-        { label: 'Second', value: 18 },
-        { label: 'Third', value: 12 },
-        { label: 'Fourth', value: 8 },
-        { label: 'Fifth', value: 2 }
+        { label: 'First', value: Math.floor(Math.random() * 100) },
+        { label: 'Second', value: Math.floor(Math.random() * 100) },
+        { label: 'Third', value:   Math.floor(Math.random() * 100)   },
+        { label: 'Fourth', value: Math.floor(Math.random() * 100)  },
+        { label: 'Fifth', value: Math.floor(Math.random() * 100)  }
     ];
 
     // Define dimensions and radius
