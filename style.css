@@ -511,3 +511,7 @@ nav.tab-selector {
       'main main aside';
   }
 }
+
+#pieChartContainer{
+  padding-left: 20%;
+}
