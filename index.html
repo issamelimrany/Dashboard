@@ -151,61 +151,47 @@
         </div>
  <!-- Row 4 - Devices -->
 
+ <div class="row-4">
+  <div class="box device-box">
+    <div class="box-title">Devices</div>
+    <div class="select-months">
+      <div class="select-month active" onclick="updateValues(this,'May')">
+        May
+      </div>
+      <div class="select-month" onclick="updateValues(this,'June')">
+        June
+      </div>
+      <div class="select-month" onclick="updateValues(this,'July')">
+        July
+      </div>
+      <div class="select-month" onclick="updateValues(this,'August')">
+        August
+      </div>
+    </div>
 
+    <div class="month-info">
+      <div id="desktop-info" class="month-info-box">
+        Desktop | <span id="desktop-percent">52%</span>
+        <div id="desktop-bar" class="month-bar" style="width: 62%;"></div>
+      </div>
+      <div id="tablet-info" class="month-info-box">
+        Tablet | <span id="tablet-percent">15%</span>
+        <div id="tablet-bar" class="month-bar" style="width: 25%;"></div>
+      </div>
+      <div id="mobile-info" class="month-info-box">
+        Mobile | <span id="mobile-percent">36%</span>
+        <div id="mobile-bar" class="month-bar" style="width: 46%;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="box device-box">
 
+    <div class="box-title">Pie chart</div>
+    <br>
+    <div id="pieChartContainer" style="width: 100%; height: 300px;"></div>
+  </div>
 
-        <div class="row-4">
-          <div class="box device-box">
-            <div class="box-title">Devices</div>
-            <div class="select-months">
-              <div class="select-month active">
-              <div class="select-month active" onclick="updateValues(this,'May')">
-                May
-              </div>
-              <div class="select-month">
-              <div class="select-month" onclick="updateValues(this,'June')">
-                June
-              </div>
-              <div class="select-month">
-              <div class="select-month" onclick="updateValues(this,'July')">
-                July
-              </div>
-              <div class="select-month">
-              <div class="select-month" onclick="updateValues(this,'August')">
-                August
-              </div>
-            </div>
-
-            <div class="month-info">
-              <div class="month-info-box">
-                Desktop | 52%
-                <div class="month-bar" style="width: 62%;"></div>
-              <div id="desktop-info" class="month-info-box">
-                Desktop | <span id="desktop-percent">52%</span>
-                <div id="desktop-bar" class="month-bar" style="width: 62%;"></div>
-              </div>
-              <div class="month-info-box">
-                Tablet | 15%
-                <div class="month-bar" style="width: 25%;"></div>
-              <div id="tablet-info" class="month-info-box">
-                Tablet | <span id="tablet-percent">15%</span>
-                <div id="tablet-bar" class="month-bar" style="width: 25%;"></div>
-              </div>
-              <div class="month-info-box">
-                Mobile | 36%
-                <div class="month-bar" style="width: 46%;"></div>
-              <div id="mobile-info" class="month-info-box">
-                Mobile | <span id="mobile-percent">36%</span>
-                <div id="mobile-bar" class="month-bar" style="width: 46%;"></div>
-              </div>
-            </div>
-          </div>
-          <div class="box device-box">
-
-            <div class="box-title">Pie chart</div>
-            <br>
-            <div id="pieChartContainer" style="width: 100%; height: 300px;"></div>
-          </div>
+     
 
 
 
