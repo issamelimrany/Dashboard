@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Statistic Dashboard</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
   </head>
   <body>
     <!-- nav bar -->
@@ -143,22 +145,6 @@
           </div>
         </div>
 
-        <!-- Row 3 - alert -->
-        <div class="row-3">
-          <div class="alert">
-            <div class="alert-title">
-              <img src="./img/alert.svg" alt="alert" />
-              <div>
-                <h2>No alerts set</h2>
-                <p>Get notified when your data drastically changes</p>
-              </div>
-            </div>
-            <button class="alert-btn">
-              Set alert
-            </button>
-          </div>
-        </div>
-
         <!-- Row 4 - Devices -->
         <div class="row-4">
           <div class="box device-box">
@@ -193,30 +179,15 @@
             </div>
           </div>
           <div class="box device-box">
-            <div class="box-title">References</div>
-            <div class="reference-details">
-              <div class="reference">
-                <span>Direct</span>
-                <span>24</span>
-              </div>
-              <div class="reference">
-                <span>Search</span>
-                <span>18</span>
-              </div>
-              <div class="reference">
-                <span>Github</span>
-                <span>12</span>
-              </div>
-              <div class="reference">
-                <span>Discord</span>
-                <span>8</span>
-              </div>
-              <div class="reference">
-                <span>Other</span>
-                <span>2</span>
-              </div>
-            </div>
+
+            <div class="box-title">Pie chart</div>
+            <br>
+            <div id="pieChartContainer" style="width: 100%; height: 300px;"></div>
           </div>
+
+
+
+
         </div>
       </main>
       <aside class="side-bar">
@@ -273,6 +244,6 @@
       </aside>
     </div>
 
-    <script src="./script.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
