@@ -430,8 +430,7 @@ nav.tab-selector {
   font-size: var(--main-font-size);
   font-weight: normal;
   padding-bottom: 10px;
-  display: flex;
-  justify-content: center;
+
 }
 
 .box-footer {
