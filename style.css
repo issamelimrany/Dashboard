@@ -338,52 +338,6 @@ nav.tab-selector {
   color: var(--bad-red);
 }
 
-/* Row 3 */
-.row-3 {
-  margin-right: 10px;
-  margin-top: 20px;
-  display: none;
-  grid-template-columns: repeat(1, 1fr);
-}
-
-.alert {
-  width: 100%;
-  padding: 30px;
-  border: 3px solid #edeff7;
-  border-radius: 10px;
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.alert-title {
-  display: flex;
-  flex-direction: row;
-}
-
-.alert-title img {
-  margin-right: 20px;
-}
-
-.alert-btn {
-  background-color: white;
-  outline: none;
-  cursor: pointer;
-  padding: 20px 40px;
-  font-size: 20px;
-  border: 1px solid var(--blue);
-  border-radius: 5px;
-  color: var(--blue);
-  font-weight: 550;
-  transition: color 0.3s, background 0.3s;
-  margin-right: 10px;
-}
-
-.alert-btn:hover {
-  color: white;
-  background-color: var(--blue);
-}
 
 /* Row 4 - Devices */
 .row-4 {
@@ -476,6 +430,8 @@ nav.tab-selector {
   font-size: var(--main-font-size);
   font-weight: normal;
   padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .box-footer {
