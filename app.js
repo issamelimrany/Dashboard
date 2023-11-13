@@ -26,8 +26,7 @@ closeMenuBtn.addEventListener("click", closeMenu);
         { label: 'First', value: Math.floor(Math.random() * 100) },
         { label: 'Second', value: Math.floor(Math.random() * 100) },
         { label: 'Third', value:   Math.floor(Math.random() * 100)   },
-        { label: 'Fourth', value: Math.floor(Math.random() * 100)  },
-        { label: 'Fifth', value: Math.floor(Math.random() * 100)  }
+        { label: 'Fourth', value: Math.floor(Math.random() * 100)  }
     ];
 
     // Define dimensions and radius
