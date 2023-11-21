@@ -26,7 +26,8 @@ closeMenuBtn.addEventListener("click", closeMenu);
         { label: 'First', value: Math.floor(Math.random() * 100) },
         { label: 'Second', value: Math.floor(Math.random() * 100) },
         { label: 'Third', value:   Math.floor(Math.random() * 100)   },
-        { label: 'Fourth', value: Math.floor(Math.random() * 100)  }
+        { label: 'Fourth', value: Math.floor(Math.random() * 100)  },
+        { label: 'Fifth', value: Math.floor(Math.random() * 100)  }
     ];
 
     // Define dimensions and radius
@@ -51,9 +52,7 @@ closeMenuBtn.addEventListener("click", closeMenu);
         .outerRadius(radius);
 
     // Enhanced color scale
-    const myColors = ['#6374e3', '#24398a', '#7775AF', '#8EE6FF'];
-
-    const color = d3.scaleOrdinal(myColors);
+    const color = d3.scaleOrdinal(d3.schemeSet3);
 
     // Append arcs (pie slices)
     const arcs = svg.selectAll('path')
@@ -152,3 +151,37 @@ function updateValues(element, month) {
 
 
       }
+
+// Existing JavaScript code
+
+// Dark Mode Toggle
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const themeToggleButton = document.getElementById('themeToggle');
+    const currentTheme = localStorage.getItem('theme');
+    
+    // Check for a saved theme in localStorage and apply it
+    if (currentTheme) {
+      document.body.classList.add(currentTheme);
+      themeToggleButton.textContent = currentTheme === 'dark-mode' ? 'Light Mode' : 'Dark Mode';
+    } else {
+      // Set the button text based on system preference
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        themeToggleButton.textContent = 'Light Mode';
+      } else {
+        themeToggleButton.textContent = 'Dark Mode';
+      }
+    }
+    
+    themeToggleButton.addEventListener('click', () => {
+      if (document.body.classList.toggle('dark-mode')) {
+        themeToggleButton.textContent = 'Light Mode';
+        localStorage.setItem('theme', 'dark-mode');
+      } else {
+        themeToggleButton.textContent = 'Dark Mode';
+        localStorage.setItem('theme', 'light-mode');
+      }
+    });
+  });
+  
