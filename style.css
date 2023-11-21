@@ -12,6 +12,68 @@
   --smaller-font-size: 16px;
 }
 
+
+#icon{
+    width: 30px;
+    cursor: pointer;
+    color: #f1879f;
+}
+
+
+
+
+
+body.dark-mode {
+    background-color: #2B2F42; /* Dark background for the body */
+    color: #ffffff; /* Light text for the body */
+}
+
+.dark-mode .menu,
+.dark-mode .side-bar,
+.dark-mode .main,
+.dark-mode .stat-box,
+.dark-mode .device-box,
+.dark-mode .reference,
+.dark-mode .row-1,
+.dark-mode .row-2,
+.dark-mode .row-4,
+.dark-mode .box,
+.dark-mode .tab-select,
+.dark-mode .select-month,
+.dark-mode .page-views,
+.dark-mode .more-stats-box,
+.dark-mode .box-footer a {
+    background-color: #353A50; /* Dark background for components */
+    color: #ffffff; /* Light text for components */
+}
+
+.dark-mode .nav-bar {
+    background-color: #2B2F42; /* Specific color for the nav-bar in dark mode */
+    color: #ffffff;
+}
+
+.dark-mode .menu-link,
+.dark-mode .menu-link:hover,
+.dark-mode .reference:hover {
+    background-color: #6374e3; /* Adjusted background for hover states in dark mode */
+}
+
+dark-mode .card-header, .dark-mode .nav-bar {
+    background-color: #353A50;}
+
+    .dark-mode .month-info-box,
+.dark-mode .month-info-box span {
+    color: #ffffff; /* Set the text color to white in dark mode */
+}
+
+/* You might also want to adjust the bar colors for dark mode */
+.dark-mode .month-bar {
+    background-color: #4f4f4f; /* A lighter shade for the bar in dark mode */
+}
+
+
+
+
 *,
 *::after,
 *::before {
@@ -515,3 +577,78 @@ nav.tab-selector {
 #pieChartContainer{
   padding-left: 20%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;  /* Adjust the width as needed */
+    height: 34px; /* Adjust the height as needed */
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Slider background */
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;  /* Adjust the size as needed */
+    width: 26px;   /* Adjust the size as needed */
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3; /* Color for when the switch is "on" */
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3; /* Color for the focus outline */
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px); /* Adjust translation as needed */
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
