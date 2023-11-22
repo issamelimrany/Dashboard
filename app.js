@@ -23,6 +23,7 @@ closeMenuBtn.addEventListener("click", closeMenu);
 
 
 /*-------------------------------------------------------------------------------------------------------------------------- */
+
 // the pie chart : 
 
 
@@ -55,7 +56,7 @@ closeMenuBtn.addEventListener("click", closeMenu);
         .innerRadius(0)
         .outerRadius(radius);
 
-    // Enhanced color scale
+    // colors : 
     const myColors = ['#6374e3', '#24398a', '#7775AF', '#8EE6FF'];
 
     const color = d3.scaleOrdinal(myColors);
@@ -66,15 +67,14 @@ closeMenuBtn.addEventListener("click", closeMenu);
         .enter()
         .append('path')
         .attr('d', arc)
-        .attr('fill', (d, i) => color(i))
-        .each(function(d){ this._current = d; }); // store the initial angles
+        .attr('fill', i => color(i)); // store the initial angles
 
     // Add transitions for interactivity
     arcs.on('mouseover', function(event, d) {
         d3.select(this)
             .transition()
             .duration(200)
-            .attr('d', d3.arc().innerRadius(0).outerRadius(radius * 1.1));
+            .attr('d', d3.arc().innerRadius(0).outerRadius(radius * 0.98));
     })
     .on('mouseout', function(event, d) {
         d3.select(this)
@@ -83,7 +83,7 @@ closeMenuBtn.addEventListener("click", closeMenu);
             .attr('d', arc);
     });
 
-    // Add labels
+    // labels
     arcs.append('text')
         .attr('transform', function(d) {
             return 'translate(' + arc.centroid(d) + ')';
@@ -91,7 +91,6 @@ closeMenuBtn.addEventListener("click", closeMenu);
         .attr('text-anchor', 'middle')
         .text(function(d) { return d.data.label; });
 
-    // Optional: Add tooltips (requires additional CSS for styling)
     arcs.append('title')
         .text(function(d) { return `${d.data.label}: ${d.data.value}`; });
 
