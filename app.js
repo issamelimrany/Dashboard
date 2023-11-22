@@ -1,4 +1,4 @@
-// Menu
+// The menue 
 const menu = document.getElementById("menu");
 const mainLayout = document.querySelector(".main-layout");
 
@@ -20,6 +20,11 @@ const closeMenu = () => {
 openMenuBtn.addEventListener("click", openMenu);
 
 closeMenuBtn.addEventListener("click", closeMenu);
+
+
+/*-------------------------------------------------------------------------------------------------------------------------- */
+// the pie chart : 
+
 
     // Sample data for the pie chart
     const data = [
@@ -90,8 +95,8 @@ closeMenuBtn.addEventListener("click", closeMenu);
     arcs.append('title')
         .text(function(d) { return `${d.data.label}: ${d.data.value}`; });
 
-
-// Graph
+/*-------------------------------------------------------------------------------------------------------------------------- */
+// the Graph : 
 const userData = {
   labels: ['January', 'February', 'March', 'April', 'May', 'June'],
   datasets: [{
@@ -129,6 +134,8 @@ new Chart(userGraph, {
     }
   }
 });
+/*-------------------------------------------------------------------------------------------------------------------------- */
+// Devices : 
 
 function updateValues(element, month) {
 
@@ -152,4 +159,40 @@ function updateValues(element, month) {
 
 
       }
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------------------------------- */
+
+// dark mode 
+    document.addEventListener('DOMContentLoaded', () => {
+        const themeToggleButton = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('theme');
+        
+        // Check for a saved theme in localStorage and apply it
+        if (currentTheme) {
+          document.body.classList.add(currentTheme);
+          themeToggleButton.textContent = currentTheme === 'dark-mode' ? 'Light Mode' : 'Dark Mode';
+        } else {
+          // Set the button text based on system preference
+          if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            themeToggleButton.textContent = 'Light Mode';
+          } else {
+            themeToggleButton.textContent = 'Dark Mode';
+          }
+        }
+        
+        themeToggleButton.addEventListener('click', () => {
+          if (document.body.classList.toggle('dark-mode')) {
+            themeToggleButton.textContent = 'Light Mode';
+            localStorage.setItem('theme', 'dark-mode');
+          } else {
+            themeToggleButton.textContent = 'Dark Mode';
+            localStorage.setItem('theme', 'light-mode');
+          }
+        });
+      });
 
