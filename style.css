@@ -12,6 +12,123 @@
   --smaller-font-size: 16px;
 }
 
+
+
+/* Style pour le bouton bascule (toggle) */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px; /* Largeur du switch */
+    height: 34px; /* Hauteur du switch */
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Couleur de fond du slider */
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px; /* Hauteur du cercle à l'intérieur du slider */
+    width: 26px; /* Largeur du cercle à l'intérieur du slider */
+    left: 4px;
+    bottom: 4px;
+    background-color: white; /* Couleur de fond du cercle */
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3; /* Couleur de fond du slider lorsqu'il est activé */
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px); /* Déplace le cercle vers la droite lorsqu'il est activé */
+  }
+  
+  .slider.round {
+    border-radius: 34px; /* Rend les bords du slider arrondis */
+  }
+  
+  .slider.round:before {
+    border-radius: 50%; /* Rend le cercle à l'intérieur du slider parfaitement rond */
+  }
+  
+  #icon {
+      width: 30px;
+      cursor: pointer;
+      color: #f1879f;
+  }
+      
+
+#icon{
+  width: 30px;
+  cursor: pointer;
+  color: #f1879f;
+}
+
+
+body.dark-mode {
+  background-color: #2B2F42; /* Dark background for the body */
+  color: #ffffff; /* Light text for the body */
+}
+
+.dark-mode .menu,
+.dark-mode .main,
+.dark-mode .stat-box,
+.dark-mode .device-box,
+.dark-mode .reference,
+.dark-mode .row-1,
+.dark-mode .row-2,
+.dark-mode .row-4,
+.dark-mode .box,
+.dark-mode .tab-select,
+.dark-mode .select-month,
+.dark-mode .page-views{
+  background-color: #353A50; /* Dark background for components */
+  color: #ffffff; /* Light text for components */
+}
+
+.dark-mode .nav-bar {
+  background-color: #2B2F42; /* Specific color for the nav-bar in dark mode */
+  color: #ffffff;
+}
+
+.dark-mode .menu-link,
+.dark-mode .menu-link:hover,
+.dark-mode .reference:hover {
+  background-color: #6374e3; /* Adjusted background for hover states in dark mode */
+}
+
+dark-mode .card-header, .dark-mode .nav-bar {
+  background-color: #353A50;}
+
+  .dark-mode .month-info-box,
+.dark-mode .month-info-box span {
+  color: #ffffff; /* Set the text color to white in dark mode */
+}
+
+.dark-mode .month-bar {
+  background-color: #4f4f4f; /* A lighter shade for the bar in dark mode */
+}
+
+
 *,
 *::after,
 *::before {
@@ -154,77 +271,9 @@ nav.tab-selector {
   transition: opacity 0.55s;
 }
 
-/* Side bar */
-.side-bar {
-  grid-area: aside;
-  /* width: 400px; */
-  width: 100%;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: white;
-  color: var(--dark-blue);
-}
 
-.side-bar-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-weight: 100;
-}
 
-.side-bar-content {
-  display: flex;
-  flex-direction: column;
-}
 
-.side-bar-page {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 10px;
-}
-
-.side-bar-page span {
-  margin-left: 20px;
-}
-
-.more-stats-box {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  margin-top: 20px;
-  padding: 20px;
-  background-color: var(--blue);
-  border-radius: 10px;
-}
-
-.more-stats-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  color: white;
-  text-transform: capitalize;
-}
-
-.more-stats-header img {
-  cursor: pointer;
-  padding: 5px;
-  border-radius: 10px;
-}
-
-.more-stats-header img:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.more-stats-body {
-  color: white;
-  margin-top: 10px;
-}
-
-.more-stats {
-  padding-bottom: 20px;
-}
 
 /* Main Area */
 .main {
@@ -273,7 +322,6 @@ nav.tab-selector {
   height: 100%;
 }
 
-/* https://twitter.com/aralroca/status/1275700185385988096 */
 .graph div:hover::before{
   display: block;
 }
@@ -339,7 +387,7 @@ nav.tab-selector {
 }
 
 
-/* Row 4 - Devices */
+/* Row of Devices */
 .row-4 {
   margin-top: 20px;
   margin-right: 10px;
@@ -433,24 +481,6 @@ nav.tab-selector {
 
 }
 
-.box-footer {
-  position: absolute;
-  bottom: 1%;
-}
-
-.box-footer a {
-  text-decoration: none;
-  color: var(--gray);
-  text-transform: uppercase;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-weight: 500;
-}
-
-.box-footer a img {
-  padding-left: 10px;
-}
 
 .selected-tab {
   font-weight: 700;
@@ -470,14 +500,7 @@ nav.tab-selector {
   opacity: 0.4;
 }
 
-@media screen and (min-width: 550px) {
-  .row-2 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .row-3 {
-    display: grid;
-  }
-}
+
 
 @media screen and (min-width: 950px) {
   :root {
@@ -502,15 +525,6 @@ nav.tab-selector {
   }
 }
 
-@media screen and (min-width: 1300px) {
-  .main-layout {
-    grid-template-areas:
-      'main main aside'
-      'main main aside'
-      'main main aside'
-      'main main aside';
-  }
-}
 
 #pieChartContainer{
   padding-left: 20%;
